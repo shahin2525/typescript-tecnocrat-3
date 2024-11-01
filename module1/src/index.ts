@@ -1,2 +1,14 @@
-let a = "rakib";
-const ageName: [number, string, boolean] = [20, "rakib", true];
+type TUser = {
+  readonly company: string;
+  name: string;
+  age: number;
+  isMarried: boolean;
+};
+
+const user: TUser = {
+  company: "alibaba",
+  name: "azgor",
+  age: 20,
+  isMarried: false,
+};
+user.name = "fa";
