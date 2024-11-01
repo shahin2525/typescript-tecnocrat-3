@@ -40,3 +40,7 @@ const {
   age,
   name: { lastName, middleName, firstName },
 } = obj4;
+
+type TAdd = (num1: number, num2: number) => number;
+
+const add: TAdd = (num1, num2) => num1 + num2;
