@@ -47,16 +47,63 @@
   const array2: genericArray<string> = ["one", "two", "three"];
   const array3: genericArray<boolean> = [true, false, true];
   //
-  const arrayObj:genericArray<{name:string,age:number,id:string}> = [
-    { name: "roki", age: 20 ,id:"dfdff"},
-    { name: "soki", age: 10,id:"dfdfd" },
+  const arrayObj: genericArray<{ name: string; age: number; id: string }> = [
+    { name: "roki", age: 20, id: "dfdff" },
+    { name: "soki", age: 10, id: "dfdfd" },
   ];
-  type genericTuple<X,Y> = [X,Y]
-  const manus:genericTuple<string,number> = ["x",20]
-  const manus2:genericTuple<string,boolean> = ["x",true]
- const userId:genericTuple<number,{name:string,age:number}> = [
-  id:20,{
-    name:"raki",age20
+  type genericTuple<X, Y> = [X, Y];
+  const manus: genericTuple<string, number> = ["x", 20];
+  const manus2: genericTuple<string, boolean> = ["x", true];
+  const userId: genericTuple<number, { name: string; age: number }> = [
+    20,
+    {
+      name: "raki",
+      age: 20,
+    },
+  ];
+  interface Developer<T, X = null> {
+    name: string;
+    age: number;
+    computer: { brand: string; price: number };
+    smartWatch: T;
+    bike?: X;
   }
- ]
+  type SmartWatch = {
+    brand: string;
+    price: number;
+  };
+  type Bike = {
+    brand: string;
+    price: number;
+    version: string;
+  };
+  const dev1: Developer<SmartWatch> = {
+    name: "roki",
+    age: 20,
+    computer: {
+      brand: "lenovo",
+      price: 20,
+    },
+    smartWatch: {
+      brand: "asus",
+      price: 2000,
+    },
+  };
+  const dev2: Developer<SmartWatch, Bike> = {
+    name: "roki",
+    age: 20,
+    computer: {
+      brand: "lenovo",
+      price: 20,
+    },
+    smartWatch: {
+      brand: "asus",
+      price: 2000,
+    },
+    bike: {
+      brand: "asus",
+      price: 2000,
+      version: "r15",
+    },
+  };
 }
