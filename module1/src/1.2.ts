@@ -107,13 +107,25 @@
     },
   };
   // function generic
-  const addCourseToDB = <T>(student: T) => {
+  const addCourseToDB = <T extends { id: string; email: string }>(
+    student: T
+  ) => {
     const course = "next level";
     return {
       ...student,
       course,
     };
   };
-  const stu1 = addCourseToDB({ name: "rakig", age: 20 });
-  const stu2 = addCourseToDB({ name: "rakig", age: 20, id: "454" });
+  const stu1 = addCourseToDB({
+    name: "rakig",
+    age: 20,
+    id: "dfdfd",
+    email: "r@gmail.com",
+  });
+  const stu2 = addCourseToDB({
+    name: "rakig",
+    age: 20,
+    id: "454",
+    email: "w@w.com",
+  });
 }
