@@ -123,9 +123,17 @@
     email: "r@gmail.com",
   });
   const stu2 = addCourseToDB({
-    name: "rakig",
+    name: "rakib",
     age: 20,
     id: "454",
     email: "w@w.com",
   });
+
+  const getProperty = <X, Y extends keyof X>(obj: X, key: Y) => {
+    return obj[key];
+  };
+  const user1 = { price: 200, model: "dfdfd" };
+  const user2 = { price: 2000, model: "asus", date: 2010 };
+  getProperty(user1, "model");
+  getProperty(user2, "date");
 }
