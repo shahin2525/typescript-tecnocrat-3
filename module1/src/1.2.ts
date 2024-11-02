@@ -106,4 +106,14 @@
       version: "r15",
     },
   };
+  // function generic
+  const addCourseToDB = <T>(student: T) => {
+    const course = "next level";
+    return {
+      ...student,
+      course,
+    };
+  };
+  const stu1 = addCourseToDB({ name: "rakig", age: 20 });
+  const stu2 = addCourseToDB({ name: "rakig", age: 20, id: "454" });
 }
