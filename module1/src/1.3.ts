@@ -43,5 +43,22 @@
     height: 20,
     width: "10",
   };
+  type Person = {
+    name: string;
+    age?: number;
+    email: string;
+    isMarried: boolean;
+  };
+  type user1 = Pick<Person, "isMarried">;
+  type omit = Omit<Person, "email">;
+  type required = Required<Person>;
+  type ReadonlyPerson = Readonly<Person>;
   //
+  const user8: ReadonlyPerson = {
+    name: "rak",
+    age: 20,
+    email: "adfd",
+    isMarried: false,
+  };
+  user8.age = 55;
 }
