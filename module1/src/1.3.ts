@@ -21,5 +21,14 @@
   };
 
   showData();
+
+  type Sheikh = {
+    bike: string;
+    car: string;
+    ship: string;
+  };
+  type Vehicle<T> = T extends keyof Sheikh ? true : false;
+  type HasPlane = Vehicle<"ship">;
+
   //
 }
