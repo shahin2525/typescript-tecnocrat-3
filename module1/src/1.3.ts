@@ -30,5 +30,18 @@
   type Vehicle<T> = T extends keyof Sheikh ? true : false;
   type HasPlane = Vehicle<"ship">;
 
+  type AreaString = {
+    width: string;
+    height: boolean;
+  };
+  type Height = AreaString["height"];
+
+  type AreaString2<T> = {
+    [key in keyof T]: T[key];
+  };
+  const area5: AreaString2<{ height: number; width: string }> = {
+    height: 20,
+    width: "10",
+  };
   //
 }
